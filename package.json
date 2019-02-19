@@ -9,6 +9,11 @@
     "forms",
     "react"
   ],
+  "homepage": "https://github.com/coreyleelarson/use-controlled-form",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/coreyleelarson/use-controlled-form.git"
+  },
   "license": "MIT",
   "main": "dist/index.js",
   "files": [
