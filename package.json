@@ -7,7 +7,9 @@
     "controlled",
     "form",
     "forms",
-    "react"
+    "react",
+    "hook",
+    "hooks"
   ],
   "homepage": "https://github.com/coreyleelarson/use-controlled-form",
   "repository": {
