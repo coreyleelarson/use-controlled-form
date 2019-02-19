@@ -36,8 +36,8 @@ function LoginForm() {
   
   return (
     <form onSubmit={onSubmit}>
-      <input value={...fields.username} />
-      <input type="password" value={...fields.password} />
+      <input {...fields.username} />
+      <input type="password" {...fields.password} />
       <button type="submit">Login</button>
     </form>
   );
