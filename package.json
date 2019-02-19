@@ -3,11 +3,17 @@
   "version": "0.0.1",
   "author": "Corey Larson <coreyleelarson@gmail.com>",
   "description": "",
-  "keywords": [],
+  "keywords": [
+    "controlled",
+    "form",
+    "forms",
+    "react"
+  ],
   "license": "MIT",
   "main": "dist/index.js",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "prepublish": "npm run build"
   },
   "devDependencies": {
     "@babel/core": "^7.3.3",
