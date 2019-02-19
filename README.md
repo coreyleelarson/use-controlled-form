@@ -23,22 +23,25 @@ yarn add use-controlled-form
 ```javascript
 import useForm from 'use-controlled-form';
 
-function MyForm() {
+function LoginForm() {
   const { fields, onSubmit } = useForm({
     initialValues: {
-      firstName: '',
-      lastName: '',
+      username: '',
+      password: '',
     },
     onSubmit: ({ values }) => {
-      // Do whatever you want!
+      console.log(values); // { username: 'foo', password: 'bar' }
     },
   });
   
   return (
     <form onSubmit={onSubmit}>
-      <input value={...fields.firstName} />
-      <input value={...fields.lastName} />
+      <input value={...fields.username} />
+      <input type="password" value={...fields.password} />
+      <button type="submit">Login</button>
     </form>
   );
 }
+
+export default LoginForm;
 ```
