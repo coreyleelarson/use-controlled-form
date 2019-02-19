@@ -2,7 +2,7 @@
   "name": "use-controlled-form",
   "version": "0.0.5",
   "author": "Corey Larson <coreyleelarson@gmail.com>",
-  "description": "",
+  "description": "Create simple controlled React forms, using hooks, without all the fluff!",
   "keywords": [
     "controlled",
     "form",
