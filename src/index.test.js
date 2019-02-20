@@ -20,10 +20,12 @@ Form.defaultProps = {
 };
 
 Form.propTypes = {
-  initialValues: PropTypes.objectOf([
-    PropTypes.object,
-    PropTypes.string,
-  ]),
+  initialValues: PropTypes.objectOf(
+    PropTypes.oneOfType([
+      PropTypes.object,
+      PropTypes.string,
+    ]),
+  ),
   onSubmit: PropTypes.func,
 };
 
