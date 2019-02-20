@@ -2,7 +2,7 @@
 
 ![npm](https://img.shields.io/npm/v/use-controlled-form.svg)
 
-Create simple controlled React forms, using hooks, without all the fluff!
+Create simple controlled React forms, using hooks ⚓, without all the fluff!
 
 **🚨 `use-controlled-form` requires React >= 16.8 🚨**
 
