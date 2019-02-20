@@ -1,6 +1,7 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { cleanup, fireEvent, render } from 'react-testing-library';
-import useForm from './';
+import useForm from '.';
 
 function Form({ initialValues, onSubmit: submitHandler }) {
   const { fields, onSubmit } = useForm({ initialValues, onSubmit: submitHandler });
@@ -13,10 +14,23 @@ function Form({ initialValues, onSubmit: submitHandler }) {
   );
 }
 
+Form.defaultProps = {
+  initialValues: {},
+  onSubmit: () => {},
+};
+
+Form.propTypes = {
+  initialValues: PropTypes.objectOf([
+    PropTypes.object,
+    PropTypes.string,
+  ]),
+  onSubmit: PropTypes.func,
+};
+
 describe('main tests', () => {
   const initialValues = { username: '', password: '' };
   const changedValues = { username: 'testUsername', password: 'testPassword' };
-  let onSubmit = jest.fn();
+  const onSubmit = jest.fn();
   let instance;
 
   beforeAll(() => {
@@ -24,10 +38,10 @@ describe('main tests', () => {
       <Form
         initialValues={initialValues}
         onSubmit={onSubmit}
-      />
+      />,
     );
   });
-  
+
   afterAll(cleanup);
 
   it('should render initial values', () => {

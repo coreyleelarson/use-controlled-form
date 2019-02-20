@@ -9,7 +9,7 @@ module.exports = {
     path: path.resolve('dist'),
   },
   externals: {
-    react: {          
+    react: {
       commonjs: 'react',
       commonjs2: 'react',
       amd: 'React',
