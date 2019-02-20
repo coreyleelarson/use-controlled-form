@@ -1,6 +1,6 @@
 {
   "name": "use-controlled-form",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "author": "Corey Larson <coreyleelarson@gmail.com>",
   "description": "Create simple controlled React forms, using hooks, without all the fluff!",
   "keywords": [
@@ -33,7 +33,10 @@
     }
   },
   "lint-staged": {
-    "*.js": ["npm run lint -- --fix", "git add"]
+    "*.js": [
+      "npm run lint -- --fix",
+      "git add"
+    ]
   },
   "devDependencies": {
     "@babel/core": "^7.3.3",
