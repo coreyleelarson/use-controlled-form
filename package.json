@@ -27,7 +27,9 @@
     "test": "jest"
   },
   "husky": {
-    "pre-commit": "npm test"
+    "hooks": {
+      "pre-commit": "npm test"
+    }
   },
   "devDependencies": {
     "@babel/core": "^7.3.3",
