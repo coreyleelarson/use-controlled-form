@@ -23,7 +23,7 @@
   ],
   "scripts": {
     "build": "webpack",
-    "lint": "eslint '**/*.js'",
+    "lint": "eslint \"**/*.js\"",
     "prepublish": "npm run build",
     "test": "jest --config .jestrc.js"
   },

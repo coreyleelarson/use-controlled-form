@@ -1,7 +1,15 @@
 import { useState } from 'react';
 
-export default ({ initialValues = {}, onSubmit: handleSubmit }) => {
+const initialErrors = {};
+
+export default function useForm({ initialValues = {}, onSubmit: handleSubmit }) {
+  const [errors, setErrors] = useState(initialErrors);
   const [values, setValues] = useState(initialValues);
+
+  function resetForm() {
+    setErrors(initialErrors);
+    setValues(initialValues);
+  }
 
   // onChange callback to be passed to <input />
   function onChange(e) {
@@ -13,20 +21,19 @@ export default ({ initialValues = {}, onSubmit: handleSubmit }) => {
   function onSubmit(e) {
     e.preventDefault();
     if (typeof handleSubmit === 'function') {
-      handleSubmit({ values });
+      handleSubmit(values, { resetForm, setErrors, values });
     }
   }
 
   // field props object to be passed to <input />
-  const fields = Object.keys(values)
-    .reduce((obj, key) => {
-      obj[key] = {
-        onChange,
-        name: key,
-        value: values[key],
-      };
-      return obj;
-    }, {});
+  const fields = Object.keys(values).reduce((obj, key) => {
+    obj[key] = {
+      onChange,
+      name: key,
+      value: values[key],
+    };
+    return obj;
+  }, {});
 
-  return { fields, onSubmit };
-};
+  return { errors, fields, onSubmit };
+}

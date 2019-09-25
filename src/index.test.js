@@ -9,7 +9,9 @@ function Form({ initialValues, onSubmit: submitHandler }) {
     <form data-testid="form" onSubmit={onSubmit}>
       <input data-testid="input-username" {...fields.username} />
       <input data-testid="input-password" {...fields.password} />
-      <button data-testid="button-submit" type="submit">Login</button>
+      <button data-testid="button-submit" type="submit">
+        Login
+      </button>
     </form>
   );
 }
@@ -20,12 +22,7 @@ Form.defaultProps = {
 };
 
 Form.propTypes = {
-  initialValues: PropTypes.objectOf(
-    PropTypes.oneOfType([
-      PropTypes.object,
-      PropTypes.string,
-    ]),
-  ),
+  initialValues: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.object, PropTypes.string])),
   onSubmit: PropTypes.func,
 };
 
@@ -36,12 +33,7 @@ describe('main tests', () => {
   let instance;
 
   beforeAll(() => {
-    instance = render(
-      <Form
-        initialValues={initialValues}
-        onSubmit={onSubmit}
-      />,
-    );
+    instance = render(<Form initialValues={initialValues} onSubmit={onSubmit} />);
   });
 
   afterAll(cleanup);
@@ -66,6 +58,6 @@ describe('main tests', () => {
     const { getByTestId } = instance;
     fireEvent.submit(getByTestId('form'));
     expect(onSubmit.mock.calls.length).toBe(1);
-    expect(onSubmit.mock.calls[0][0].values).toEqual(changedValues);
+    expect(onSubmit.mock.calls[0][0]).toEqual(changedValues);
   });
 });
