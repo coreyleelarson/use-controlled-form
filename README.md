@@ -10,11 +10,13 @@ Create simple controlled React forms, using hooks ⚓, without all the fluff!
 ## Installation
 
 **Install with NPM:**
+
 ```bash
 npm i use-controlled-form
 ```
 
 **Install with Yarn:**
+
 ```bash
 yarn add use-controlled-form
 ```
@@ -22,19 +24,19 @@ yarn add use-controlled-form
 ## Basic Usage
 
 ```javascript
-import useForm from 'use-controlled-form';
+import useForm from "use-controlled-form";
 
 function LoginForm() {
   const { fields, onSubmit } = useForm({
     initialValues: {
-      username: '',
-      password: '',
+      username: "",
+      password: ""
     },
-    onSubmit: ({ values }) => {
+    onSubmit: values => {
       console.log(values); // { username: 'foo', password: 'bar' }
-    },
+    }
   });
-  
+
   return (
     <form onSubmit={onSubmit}>
       <input {...fields.username} />
